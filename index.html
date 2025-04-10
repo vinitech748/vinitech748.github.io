@@ -1,31 +1,44 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+    <!-- Define a codificação de caracteres -->
     <meta charset="UTF-8">
+
+    <!-- Garante que o layout será responsivo em dispositivos móveis -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Título da aba do navegador -->
     <title>Vini Tech - Conserto e Manutenção de Computadores</title>
+
+    <!-- Ícones do Font Awesome (usado para o ícone do telefone) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Estilo da página (CSS interno) -->
     <style>
+        /* Reset padrão: remove margens e paddings de todos os elementos */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        /* Estilos gerais do corpo da página */
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-color: #f4f4f4; /* Cor de fundo clara */
             line-height: 1.6;
-            color: #333;
+            color: #333; /* Cor padrão do texto */
         }
 
+        /* Cabeçalho */
         header {
-            background-color: #005f73;
+            background-color: #005f73; /* Azul escuro */
             color: #fff;
             padding: 20px 0;
             text-align: center;
         }
 
+        /* Container de navegação principal */
         .main-nav {
             display: flex;
             justify-content: space-between;
@@ -35,22 +48,26 @@
             margin: auto;
         }
 
+        /* Logo da empresa */
         .main-nav .logo img {
             height: 50px;
         }
 
+        /* Lista de navegação (menu) */
         nav ul {
             list-style: none;
             display: flex;
-            gap: 20px;
+            gap: 20px; /* Espaço entre os itens */
         }
 
+        /* Links do menu */
         nav ul li a {
             color: #fff;
             text-decoration: none;
             font-weight: bold;
         }
 
+        /* Estilo do botão "Entre em Contato Agora" */
         .main-red-button-hover a {
             background: #d90429;
             padding: 8px 16px;
@@ -59,16 +76,19 @@
             text-decoration: none;
         }
 
+        /* Banner principal do topo da página */
         .main-banner {
-            background-color: #e0f7fa;
+            background-color: #e0f7fa; /* Azul claro */
             padding: 60px 20px;
             text-align: center;
         }
 
+        /* Destaque para parte do título com <span> */
         .main-banner h2 span {
-            color: #005f73;
+            color: #005f73; /* Azul escuro */
         }
 
+        /* Botões abaixo do banner */
         .down-buttons {
             margin-top: 20px;
             display: flex;
@@ -76,6 +96,7 @@
             gap: 20px;
         }
 
+        /* Botão azul "Nossos Serviços" */
         .main-blue-button-hover a {
             background: #0077b6;
             color: #fff;
@@ -84,12 +105,14 @@
             text-decoration: none;
         }
 
+        /* Link com ícone de telefone */
         .call-button a {
             color: #0077b6;
             text-decoration: none;
             font-weight: bold;
         }
 
+        /* Estilo para seções como Sobre, Serviços e Contato */
         section {
             padding: 20px;
             margin: 20px auto;
@@ -99,14 +122,16 @@
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
 
+        /* Container dos serviços (layout em colunas) */
         .services {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
         }
 
+        /* Cada serviço individual */
         .service {
-            flex: 1 1 calc(33.333% - 20px);
+            flex: 1 1 calc(33.333% - 20px); /* 3 por linha */
             margin: 10px;
             padding: 20px;
             background-color: #e9ecef;
@@ -114,11 +139,13 @@
             text-align: center;
         }
 
+        /* Imagens dos serviços */
         .service img {
             max-width: 80px;
             margin-bottom: 15px;
         }
 
+        /* Rodapé da página */
         footer {
             text-align: center;
             padding: 20px 0;
@@ -127,6 +154,7 @@
             margin-top: 20px;
         }
 
+        /* Responsividade: em telas menores, os serviços ocupam 100% da largura */
         @media (max-width: 768px) {
             .service {
                 flex: 1 1 100%;
@@ -136,18 +164,23 @@
 </head>
 <body>
 
+<!-- Cabeçalho do site -->
 <header class="header-area header-sticky">
   <div class="container">
     <nav class="main-nav">
+      <!-- Logo da empresa -->
       <a href="index.html" class="logo">
         <img src="images/logo.png" alt="Logo">
       </a>
+
+      <!-- Menu de navegação -->
       <ul class="nav">
         <li><a href="#top" class="active">Menu</a></li>
         <li><a href="#services">Serviços</a></li>
         <li><a href="#about">Sobre</a></li>
         <li><a href="#contact">Contato</a></li>
         <li>
+          <!-- Botão vermelho de contato -->
           <div class="main-red-button-hover">
             <a href="#contact">Entre em Contato Agora</a>
           </div>
@@ -157,90 +190,108 @@
   </div>
 </header>
 
+<!-- Banner principal com chamada de atenção -->
 <div class="main-banner" id="top">
   <h6>Bem-vindo à ViniTech</h6>
   <h2>Cansado de <em>Problemas e Travamentos</em> no seu <span>Computador ou Notebook</span>?</h2>
   <p>Estamos Aqui Para Ajudá-lo!</p>
   <div class="down-buttons">
+    <!-- Botão azul para rolar até os serviços -->
     <div class="main-blue-button-hover">
       <a href="#services">Nossos Serviços</a>
     </div>
+    <!-- Botão com ícone de telefone -->
     <div class="call-button">
       <a href="#"><i class="fa fa-phone"></i> (51) 99681-9192</a>
     </div>
   </div>
 </div>
 
+<!-- Seção Sobre Nós -->
 <section id="about">
   <h2>Sobre Nós</h2>
   <p>Bem-vindo à Vini Tech! Somos especializados em conserto e manutenção de computadores, oferecendo soluções rápidas e eficientes para garantir o melhor desempenho dos seus equipamentos.</p>
 </section>
 
+<!-- Seção dos serviços prestados -->
 <section id="services">
   <h2>Nossos Serviços</h2>
   <div class="services">
-            <div class="service">
-                <img src="images/montagemm.png" alt="Montagem e Troca de Peças">
-                <h3>Montagem e Troca de Peças</h3>
-                <p>Montagem e troca de peças para garantir que seu computador atenda às suas necessidades específicas.</p>
-            </div>
-            <div class="service">
-                <img src="images/sistemas operacionais.png" alt="Instalação de Sistemas">
-                <h3>Instalação de Sistemas Operacionais e Antivírus</h3>
-                <p>Instalação e configuração de sistemas operacionais e antivírus confiáveis.</p>
-            </div>
-            <div class="service">
-                <img src="images/limpeza.png" alt="Limpeza">
-                <h3>Limpeza e Otimização</h3>
-                <p>Limpeza externa completa do seu computador e otimização do armazenamento.</p>
-            </div>
-            <div class="service">
-                <img src="images/upgrade.png" alt="Atualização de Hardware">
-                <h3>Atualização de Hardware</h3>
-                <p>Atualização de hardware para otimizar o desempenho do seu computador ou notebook.</p>
-            </div>
-            <div class="service">
-                <img src="images/costumizacao.png" alt="Personalização de Sistemas">
-                <h3>Personalização de Sistemas</h3>
-                <p>Ajustamos configurações e recursos para maximizar a eficiência e a funcionalidade do seu computador.</p>
-            </div>
-            <div class="service">
-                <img src="images/formatacao.png" alt="Formatação">
-                <h3>Formatação e Instalação de Aplicativos</h3>
-                <p>Formatação completa de computadores e instalação de uma variedade de aplicativos essenciais.</p>
-            </div>
-            <div class="service">
-                <img src="images/assistencia.png" alt="Assistência Técnica">
-                <h3>Assistência Técnica</h3>
-                <p>Assistência técnica especializada solucionando problemas de forma rápida e eficiente.</p>
-            </div>
-            <div class="service">
-                <img src="images/mentoria.png" alt="Consultoria em Tecnologia">
-                <h3>Consultoria em Tecnologia</h3>
-                <p>Consultoria especializada para ajudá-lo a selecionar os equipamentos e soluções adequados.</p>
-            </div>
-            <div class="service">
-                <img src="assets/images/antivirus.png" alt="Remoção de Vírus">
-                <h3>Remoção de Vírus e Malware</h3>
-                <p>Realizamos a detecção e remoção de vírus, malware e outras ameaças digitais.</p>
-            </div>
-            <div class="service">
-                <img src="images/manutencao.png" alt="Manutenção Preventiva">
-                <h3>Manutenção Preventiva</h3>
-                <p>Serviços de manutenção preventiva para garantir o bom funcionamento ao longo prazo.</p>
-            </div>
-        </div>
-    </section>
+    <!-- Cada bloco abaixo representa um serviço diferente -->
+    <div class="service">
+      <img src="images/montagemm.png" alt="Montagem e Troca de Peças">
+      <h3>Montagem e Troca de Peças</h3>
+      <p>Montagem e troca de peças para garantir que seu computador atenda às suas necessidades específicas.</p>
+    </div>
 
-    <section id="contact">
-        <h2>Contato</h2>
-        <p>Entre em contato conosco para mais informações ou para agendar um serviço.</p>
-        <p>Email: vinitech@gmail.com</p>
-        <p>Telefone: (51) 99681-9192</p>
-    </section>
+    <div class="service">
+      <img src="images/sistemas operacionais.png" alt="Instalação de Sistemas">
+      <h3>Instalação de Sistemas Operacionais e Antivírus</h3>
+      <p>Instalação e configuração de sistemas operacionais e antivírus confiáveis.</p>
+    </div>
 
-    <footer>
-        <p>&copy; 2025 Vini Tech - Todos os direitos reservados.</p>
-    </footer>
+    <div class="service">
+      <img src="images/limpeza.png" alt="Limpeza">
+      <h3>Limpeza e Otimização</h3>
+      <p>Limpeza externa completa do seu computador e otimização do armazenamento.</p>
+    </div>
+
+    <div class="service">
+      <img src="images/upgrade.png" alt="Atualização de Hardware">
+      <h3>Atualização de Hardware</h3>
+      <p>Atualização de hardware para otimizar o desempenho do seu computador ou notebook.</p>
+    </div>
+
+    <div class="service">
+      <img src="images/costumizacao.png" alt="Personalização de Sistemas">
+      <h3>Personalização de Sistemas</h3>
+      <p>Ajustamos configurações e recursos para maximizar a eficiência e a funcionalidade do seu computador.</p>
+    </div>
+
+    <div class="service">
+      <img src="images/formatacao.png" alt="Formatação">
+      <h3>Formatação e Instalação de Aplicativos</h3>
+      <p>Formatação completa de computadores e instalação de uma variedade de aplicativos essenciais.</p>
+    </div>
+
+    <div class="service">
+      <img src="images/assistencia.png" alt="Assistência Técnica">
+      <h3>Assistência Técnica</h3>
+      <p>Assistência técnica especializada solucionando problemas de forma rápida e eficiente.</p>
+    </div>
+
+    <div class="service">
+      <img src="images/mentoria.png" alt="Consultoria em Tecnologia">
+      <h3>Consultoria em Tecnologia</h3>
+      <p>Consultoria especializada para ajudá-lo a selecionar os equipamentos e soluções adequados.</p>
+    </div>
+
+    <div class="service">
+      <img src="assets/images/antivirus.png" alt="Remoção de Vírus">
+      <h3>Remoção de Vírus e Malware</h3>
+      <p>Realizamos a detecção e remoção de vírus, malware e outras ameaças digitais.</p>
+    </div>
+
+    <div class="service">
+      <img src="images/manutencao.png" alt="Manutenção Preventiva">
+      <h3>Manutenção Preventiva</h3>
+      <p>Serviços de manutenção preventiva para garantir o bom funcionamento ao longo prazo.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Seção de contato -->
+<section id="contact">
+  <h2>Contato</h2>
+  <p>Entre em contato conosco para mais informações ou para agendar um serviço.</p>
+  <p>Email: vinitech@gmail.com</p>
+  <p>Telefone: (51) 99681-9192</p>
+</section>
+
+<!-- Rodapé do site -->
+<footer>
+  <p>&copy; 2025 Vini Tech - Todos os direitos reservados.</p>
+</footer>
+
 </body>
 </html>
