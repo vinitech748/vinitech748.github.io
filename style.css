@@ -1,0 +1,127 @@
+/* Reset padrão */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    line-height: 1.6;
+    color: #333;
+}
+
+header {
+    background-color: #005f73;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.main-nav .logo img {
+    height: 50px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.main-red-button-hover a {
+    background: #d90429;
+    padding: 8px 16px;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.main-banner {
+    background-color: #e0f7fa;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.main-banner h2 span {
+    color: #005f73;
+}
+
+.down-buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.main-blue-button-hover a {
+    background: #0077b6;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.call-button a {
+    color: #0077b6;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+section {
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 1100px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.services {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.service {
+    flex: 1 1 calc(33.333% - 20px);
+    margin: 10px;
+    padding: 20px;
+    background-color: #e9ecef;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.service img {
+    max-width: 80px;
+    margin-bottom: 15px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #005f73;
+    color: #fff;
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .service {
+        flex: 1 1 100%;
+    }
+}
