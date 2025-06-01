@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<div id="mensagemSaudacao"></div>
+
+<head>
+    <title>Apostila de HTML e CSS</title>
+    <meta charset="UTF-8">
+    <meta name="author" content="Bernardo">
+    <meta name="description" content="página com HTML e CSS">
+    <meta name="keywords" content="HTML,CSS,JS,Designs,Web">
+    <link rel="shortcut icon" href="img/icone.png">
+    <link rel="stylesheet" type="text/css" href="css/estilo.css">
+</head>
+
+<body class="fundo">
+    <main class="geral">
+        <h1>Formulário para pets</h1>
+        <p>Preencha este formulário para conhecermos melhor o seu pet! Com essas informações, podemos oferecer cuidados, serviços e recomendações ideais para o bem-estar e a saúde dele.</p>
+
+        <form method="post" name="form1" action="#">
+            <fieldset class="pessoais">
+                <legend>Dados Pessoais do Tutor:</legend>
+                <label>Nome:<span class="obriga">*</span>
+                    <input type="text" name="txtnome" size="30" required>
+                </label><br>
+                <label>Data de Nascimento:
+                    <input type="date" name="dtnascimento">
+                </label><br>
+                <label>Email:
+                    <input type="email" name="txtmail" size="25" required> &nbsp;&nbsp;Senha:
+                    <input type="password" name="txtsenha" maxlength="7" required>
+                </label><br>
+                <label>Endereço:
+                    <input type="text" name="txtendereco" size="30"> Nº:
+                    <input type="text" name="txtnumero" size="5"><br> Cidade:
+                    <input type="text" name="txtcidade" size="20"> Estado:
+                    <select name="selestado">
+                        <option value="vazio">Selecione</option>
+                        <option value="rs">RS</option>
+                        <option value="sc">SC</option>
+                        <option value="pr">PR</option>
+                        <option value="sp">SP</option>
+                    </select>
+                </label><br>
+                <label>Sexo:
+                    <input type="radio" name="rdsexo" value="f">Feminino &nbsp;
+                    <input type="radio" name="rdsexo" value="m">Masculino &nbsp;
+                    <input type="radio" name="rdsexo" value="o">Outro
+                </label><br>
+                <label>Assuntos de Interesse:<br>
+                    <input type="checkbox" name="ckinteresse" value="tecnologia">Tecnologia <br>
+                    <input type="checkbox" name="ckinteresse" value="musica">Música <br>
+                    <input type="checkbox" name="ckinteresse" value="filme">Filme <br>
+                    <input type="checkbox" name="ckinteresse" value="livro">Livro <br>
+                </label>
+            </fieldset>
+
+            <fieldset class="pet">
+                <legend>Informações do Pet:</legend>
+                <label>Nome do Pet:
+                    <input type="text" name="petnome" size="30" required>
+                </label><br>
+                <label>Espécie:
+                    <select name="especie">
+                        <option value="cachorro">Cachorro</option>
+                        <option value="gato">Gato</option>
+                        <option value="outro">Outro</option>
+                    </select>
+                </label><br>
+                <label>Raça:
+                    <input type="text" name="raca" size="30">
+                </label><br>
+                <label>Idade:
+                    <input type="number" name="idade" min="0"> anos
+                </label><br>
+                <label>Sexo:
+                    <input type="radio" name="petsexo" value="m">Macho
+                    <input type="radio" name="petsexo" value="f">Fêmea
+                </label><br>
+                <label>Castrado?
+                    <input type="radio" name="castrado" value="sim">Sim
+                    <input type="radio" name="castrado" value="nao">Não
+                </label><br>
+                <label>Vacinas em dia?
+                    <input type="radio" name="vacina" value="sim">Sim
+                    <input type="radio" name="vacina" value="nao">Não
+                </label><br>
+                <label>Observações de saúde:
+                    <textarea name="obs" rows="4" cols="50" placeholder="Alergias, medicamentos, condições especiais..."></textarea>
+                </label>
+            </fieldset>
+
+            <br>
+            <input type="submit" value="Enviar">
+            <input type="reset" value="Limpar">
+        </form>
+        <p id="mensagemSaudacao" style="font-size: 20px; font-weight: bold; color: green;"></p>
+    </main>
+
+    <script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const form = document.forms["form1"];
+    form.addEventListener("submit", function(event) {
+      event.preventDefault(); // Impede o envio real do formulário
+
+      const nome = form["txtnome"].value.trim();
+      if (nome === "") {
+        alert("Por favor, insira seu nome.");
+        return;
+      }
+
+      const horaAtual = new Date().getHours();
+      let saudacao;
+
+      if (horaAtual >= 5 && horaAtual < 12) {
+        saudacao = "Bom dia";
+      } else if (horaAtual >= 12 && horaAtual < 18) {
+        saudacao = "Boa tarde";
+      } else {
+        saudacao = "Boa noite";
+      }
+
+      const mensagem = `${saudacao}, ${nome}!`;
+
+      // Armazena a mensagem no localStorage
+      localStorage.setItem("mensagemSaudacao", mensagem);
+
+      // Redireciona para a página principal
+      window.location.href = "index.html";
+    });
+  });
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const mensagem = localStorage.getItem("mensagemSaudacao");
+    const el = document.getElementById("mensagemSaudacao");
+
+    if (mensagem) {
+      el.textContent = mensagem;
+      el.style.color = "black"; // Revela a mensagem
+      localStorage.removeItem("mensagemSaudacao");
+    }
+  });
+</script>
+
+</body>
+
+</html>
